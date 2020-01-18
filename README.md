@@ -1,8 +1,8 @@
 ## Pre-flight
 
-Automatically build task lists for every pull request based on information added to the request's commit messages.
+Automatically build task lists for every pull request based on information in your commit messages. 
 
-Pre-flight automatically and continuously collects the tasks you've mentioned in your commit messages and adds them as a task list to the pull request's description. It also prevents the pull request from being merged until all tasks are marked as completed.
+Pre-flight automatically and continuously collects the tasks you've mentioned in your commit messages and adds them as a [task list](https://help.github.com/en/github/managing-your-work-on-github/about-task-lists) to the pull request's description. It also will also display a failed check on the pull request until all tasks are marked as completed.
 
 ### Usage
 
