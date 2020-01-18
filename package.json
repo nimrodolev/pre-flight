@@ -17,11 +17,13 @@
     "build": "tsc -p tsconfig.json",
     "dev": "nodemon --exec \"npm start\"",
     "start": "probot run ./lib/index.js",
+    "publish": "tsc -p tsconfig.json && copy .env .\\output\\.env && copy package.json output\\package.json && copy lib\\* output && cd output && npm install --production && cd ..",
     "lint": "standard **/*.ts --fix",
     "test": "jest && standard **/*.ts",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
+    "@probot/serverless-lambda": "^0.4.0",
     "probot": "^9.5.3"
   },
   "devDependencies": {
