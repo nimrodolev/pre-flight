@@ -12,7 +12,7 @@ Whenever you're committing a change, if that change will require some manual act
 Just a pair for square brackets, followed by a colon and then the task definition. The task definition can be as long as you like, but can't contain line breaks. There will also be an easy link to the commit, so you can add more details in the rest of the commit message.
 Branch Conditioning
 
-## Branch Conditioning
+#### Branch Conditioning
 
 By default, any PR will collect all the tasks in all of it's commits. However, sometimes a task is only relevant for a specific environment. For example, you may want to only show the task when merging to master. In that case, the syntax is -
 [](master): I'm only relevant for production
