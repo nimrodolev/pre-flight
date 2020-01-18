@@ -7,6 +7,7 @@ Pre-flight automatically and continuously collects the tasks you've mentioned in
 ### Usage
 
 Whenever you're committing a change, if that change will require some manual action to happen before it's merged to production (or to any other environment, for that matter), you put down tasks inside the commit message. A basic task looks like this -
+
 `[]: don't forget that important thing`
 
 Just a pair for square brackets, followed by a colon and then the task definition. The task definition can be as long as you like, but can't contain line breaks. There will also be an easy link to the commit, so you can add more details in the rest of the commit message.
@@ -15,9 +16,11 @@ Branch Conditioning
 #### Branch Conditioning
 
 By default, any PR will collect all the tasks in all of it's commits. However, sometimes a task is only relevant for a specific environment. For example, you may want to only show the task when merging to master. In that case, the syntax is -
+
 `[](master): I'm only relevant for production`
 
 You can also specify multiple branches using pipes -
+
 `[](master|dev): I'm only relevant for prod/`staging`
 
 
@@ -37,4 +40,4 @@ As mentioned above, The [Pre-flight GitHub Marketplace application](https://gith
 
 ##### Logo
 
-The Pre-flight logo is based a modification of a couple of icons by the fabulous folks at [Font Awesome](https://fontawesome.com). As per [their license](https://fontawesome.com/license) I'm obliged to inform you that I am not associated with Font Awesome and do not endorse me or my work.
+The Pre-flight logo is based a modification of a couple of icons by the fabulous folks at [Font Awesome](https://fontawesome.com). As per [their license](https://fontawesome.com/license) I'm obliged to inform you that I am not associated with Font Awesome and they do not endorse me or my work.
