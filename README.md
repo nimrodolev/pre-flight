@@ -21,7 +21,7 @@ By default, any PR will collect all the tasks in all of it's commits. However, s
 
 You can also specify multiple branches using pipes -
 
-`[](master|dev): I'm only relevant for prod/`staging`
+`[](master|dev): I'm only relevant for prod/staging`
 
 
 ### Privacy
