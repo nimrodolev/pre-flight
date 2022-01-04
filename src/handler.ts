@@ -82,6 +82,7 @@ function getCommitTasks(commits: Octokit.Response<Octokit.PullsListCommitsRespon
   return tasks;
 }
 
+
 function tasksToComment(taskState: object): string | undefined {
   const result = [DIVIDER];
   const entires = Object.entries(taskState);
