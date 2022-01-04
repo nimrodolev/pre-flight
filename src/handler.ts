@@ -5,8 +5,8 @@ const DIVIDER = '######### PREFLIGHT #########';
 const CHECKBOXES_RGX = /(- \[[x ]\] (?<task>.+))/gm;
 const DONE_RGX = /(- \[[x]\] (?<task>.+))/;
 const PENDING_RGX = /(- \[[ ]\] (?<task>.+))/;
-const TASK_DEFS_RGX = /^\[\](\((.*)\))?:(.*)/gm
-const TASK_DEF_RGX = /^\[\](\((?<branches>.*)\))?:(?<task>.*)/
+const TASK_DEFS_RGX = /^(\* )?\[\](\((.*)\))?:(.*)/gm
+const TASK_DEF_RGX = /^(\* )?\[\](\((?<branches>.*)\))?:(?<task>.*)/
 
 export = (app: Application) => {
   app.on(['pull_request.opened', 'pull_request.edited', 'pull_request.synchronize'], async (context: Context<WebhookPayloadPullRequest>) => {
@@ -17,6 +17,7 @@ export = (app: Application) => {
     }
 
     const pr = context.payload.pull_request;
+    pr.body = pr.body || '';
     const existingTaskStates = getExistingTaskStates(pr.body);
     const commits = await context.github.pulls.listCommits({
       pull_number: context.payload.number,
@@ -80,6 +81,7 @@ function getCommitTasks(commits: Octokit.Response<Octokit.PullsListCommitsRespon
   }
   return tasks;
 }
+
 
 function tasksToComment(taskState: object): string | undefined {
   const result = [DIVIDER];
